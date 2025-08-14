@@ -1,0 +1,8 @@
+aiohttp==3.9.1
+numpy==1.24.3
+pandas==2.0.3
+asyncio
+dataclasses
+argparse
+statistics
+multiprocessing
