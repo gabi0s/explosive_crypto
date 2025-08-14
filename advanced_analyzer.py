@@ -298,7 +298,11 @@ class AdvancedCryptoAnalyzer:
                 metrics['bollinger_position'] = 'oversold'
             else:
                 metrics['bollinger_position'] = 'normal'
-        
+        for k, v in metrics.items():
+            if isinstance(v, bool):
+                metrics[k] = int(v)
+            elif v is None:
+                metrics[k] = 0
         return metrics
 
     def calculate_advanced_explosion_score(self, basic_analysis, advanced_metrics):
